@@ -11,6 +11,7 @@ namespace BeautyForestAgent
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +47,56 @@ namespace BeautyForestAgent
         private void NtiTray_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             VisibleChange(true);
+        }
+
+        private void 수정ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Modify();
+        }
+
+        private void Modify()
+        {
+            this.statusMessage.Text = "프로필 수정";
+            FormModify m = new FormModify();
+            m.Title = "프로필 수정";
+            m.ShowDialog();
+        }
+
+        private void 추가ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+
+        private void Add()
+        {
+            this.statusMessage.Text = "프로필 추가";
+            FormAdd m = new FormAdd();
+            m.Title = "프로필 추가";
+            m.ShowDialog();
+        }
+
+        private void 이프로그램은ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.statusMessage.Text = "도움말";
+            FormAbout m = new FormAbout();
+            m.Title = "도움말";
+            m.Show();
+        }
+
+        private void BtnModify_Click(object sender, EventArgs e)
+        {
+            Modify();
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+
+        private void 끝내기ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.statusMessage.Text = "종료합니다.";
+            Application.ExitThread();
         }
     }
 }
